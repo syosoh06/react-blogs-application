@@ -7,18 +7,16 @@
 import React from 'react';
 import ReactTestUtils from 'react-dom/test-utils';
 
-import Home from './BlogsList';
+import BlogsList from './BlogsList';
 
-xdescribe('Home', function() {
-  let component;
+describe('Home', function() {
+  const blogs = [{ id: 1, author: 'soham', content: 'blog post' }];
 
-  beforeEach(function() {
-    const renderer = ReactTestUtils.createRenderer();
-    renderer.render(<Home/>);
-    component = renderer.getRenderOutput();
-  });
+  it('blogs list component should render', function() {
+      const componentTree = ReactTestUtils.renderIntoDocument(<BlogsList blogs = { blogs } />);
+      const singleComponentWithMatchedClass = ReactTestUtils.findRenderedDOMComponentWithClass( componentTree, 'table-responsive');
 
-  it('contains spec that returns true', function() {
-    expect(true).toBe(true);
+      expect(ReactTestUtils.isElementOfType(<BlogsList blogs = { blogs }/>, BlogsList)).toBe(true);
+      expect(singleComponentWithMatchedClass.className).toBe('table-responsive');
   });
 });

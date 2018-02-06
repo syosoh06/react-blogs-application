@@ -6,19 +6,22 @@
 
 import React from 'react';
 import ReactTestUtils from 'react-dom/test-utils';
+import BlogPage from './BlogPage';
 
-import About from './BlogPage';
-
-xdescribe('About', function() {
+describe('BlogPage', function() {
   let component;
+  const props = {
+    params: { id: 1 },
+    blog: { id: 1, author: 'soham', content: 'blog post' }
+  };
 
   beforeEach(function() {
     const renderer = ReactTestUtils.createRenderer();
-    renderer.render(<About/>);
+    renderer.render(<BlogPage params = {props.params} blog = {props.blog} />);
     component = renderer.getRenderOutput();
   });
 
-  it('contains spec that returns true', function() {
-    expect(true).toBe(true);
+  it('the blog page component should render properly', function() {
+    expect(component.props.children.length).toBe(2);
   });
 });
