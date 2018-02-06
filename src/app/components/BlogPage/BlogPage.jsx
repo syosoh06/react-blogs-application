@@ -1,6 +1,4 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import * as blogActions from '../../actions/blogActions';
 import BlogPost from "../BlogPost/BlogPost";
 import CommentsBox from "../CommentsBox/CommentsBox";
 
@@ -22,16 +20,4 @@ class BlogPage extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        blog: state.blog
-    };
-};
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-        fetchBlogById: blogId => dispatch(blogActions.fetchBlogById(blogId))
-    };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(BlogPage);
+export default BlogPage;

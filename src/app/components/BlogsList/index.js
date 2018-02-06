@@ -1,3 +1,10 @@
-import Home from './BlogsList';
+import BlogsList from './BlogsList';
+import {connect} from "react-redux";
 
-export default Home;
+const mapStateToProps = (state) => {
+    return {
+        blogs: state.blogs
+    };
+};
+
+export default connect(mapStateToProps)(BlogsList);

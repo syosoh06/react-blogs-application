@@ -19,7 +19,10 @@ export const addCommentSuccess = (comment) => {
 export const fetchComments = (id) => {
   return (dispatch) => {
       Axios.get(apiUrl + '/posts/' + id + '/comments')
-          .then(res => dispatch(fetchCommentsSuccess(res.data)))
+          .then(res => {
+              console.log(res);
+              dispatch(fetchCommentsSuccess(res.data))
+          })
           .catch(err => {
               throw err;
           });

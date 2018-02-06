@@ -15,7 +15,7 @@ import { Router, Route, IndexRoute, Redirect, browserHistory } from 'react-route
 import App from './app/App';
 import BlogPost from './app/components/BlogPage';
 import BlogsList from './app/components/BlogsList';
-import * as blogActions from './app/actions/blogActions';
+import * as blogActions from './app/actions/blogActions/blogActions';
 
 import configureStore from './app/store/configureStore';
 

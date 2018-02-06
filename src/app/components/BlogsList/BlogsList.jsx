@@ -2,7 +2,6 @@
  * @overview Home page.  Renders static content.
  */
 import React from 'react';
-import {connect} from 'react-redux';
 
 import BlogRow from '../BlogRow/BlogRow';
 
@@ -12,7 +11,6 @@ class BlogsList extends React.Component {
   }
 
   render() {
-    console.table(this.props.blogs);
     return (<div className="table-responsive">
       <table className="table">
     <thead>
@@ -36,10 +34,4 @@ class BlogsList extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    blogs: state.blogs
-  };
-};
-
-export default connect(mapStateToProps)(BlogsList);
+export default BlogsList;

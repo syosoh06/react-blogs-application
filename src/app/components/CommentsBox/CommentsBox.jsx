@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import * as commentActions from '../../actions/commentActions';
+import * as commentActions from '../../actions/commentActions/commentActions';
 import CommentsList from "../CommentsList/CommentsList";
 
 class CommentsBox extends React.Component {
